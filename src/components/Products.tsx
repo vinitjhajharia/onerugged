@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { products, categories, getFeaturedProducts } from '../data/products';
@@ -6,6 +6,9 @@ import { products, categories, getFeaturedProducts } from '../data/products';
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [currentSlide, setCurrentSlide] = useState(0);
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [productsPerSlide, activeCategory]);
 
   // Use actual product data
   const categoryFilter = [
@@ -25,14 +28,21 @@ const Products = () => {
 
   // Helper functions for carousel
   const getProductsPerSlide = () => {
-    // Desktop: 3 products in 1 row
-    // Tablet: 3 products in 1 row  
-    // Mobile: 1 product per row
-    return 3;
+    const width = window.innerWidth;
+    if (width >= 1024) return 3; // desktop
+    if (width >= 768) return 2; // tablet
+    return 1; // mobile
   };
 
+  const [productsPerSlide, setProductsPerSlide] = useState(getProductsPerSlide());
+
+  useEffect(() => {
+    const handleResize = () => setProductsPerSlide(getProductsPerSlide());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const getProductSlides = (products: any[]) => {
-    const productsPerSlide = getProductsPerSlide();
     const slides = [];
     
     for (let i = 0; i < products.length; i += productsPerSlide) {
