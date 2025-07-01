@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { categories } from '../data/products';
 import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
 
 const Header = () => {
@@ -48,10 +49,15 @@ const Header = () => {
               </button>
               <div className="absolute top-full left-0 mt-1 w-56 bg-white shadow-xl rounded-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <div className="p-4 space-y-2">
-                  <Link to="/laptops" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Rugged Laptops</Link>
-                  <Link to="/tablets" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Rugged Tablets</Link>
-                  <Link to="/phones" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Rugged Phones</Link>
-                  <Link to="/vehicle" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Vehicle Computers</Link>
+                  {categories.map(cat => (
+                    <Link
+                      key={cat.slug}
+                      to={`/${cat.slug}`}
+                      className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50 capitalize"
+                    >
+                      {cat.name}
+                    </Link>
+                  ))}
                   <a href="#accessories" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Accessories</a>
                 </div>
               </div>
@@ -133,10 +139,15 @@ const Header = () => {
               </button>
               {isProductsOpen && (
                 <div className="pl-4 space-y-3 bg-slate-50 rounded-lg p-4 ml-4">
-                  <Link to="/laptops" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Rugged Laptops</Link>
-                  <Link to="/tablets" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Rugged Tablets</Link>
-                  <Link to="/phones" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Rugged Phones</Link>
-                  <Link to="/vehicle" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Vehicle Computers</Link>
+                  {categories.map(cat => (
+                    <Link
+                      key={cat.slug}
+                      to={`/${cat.slug}`}
+                      className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors capitalize"
+                    >
+                      {cat.name}
+                    </Link>
+                  ))}
                   <a href="#accessories" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Accessories</a>
                 </div>
               )}
