@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Star, Check, Shield, Truck, Phone, Mail, ChevronLeft, ChevronRight, ShoppingCart, Heart, Share2, Send, User, Building, MessageSquare } from 'lucide-react';
-import { getProductBySlug, getRelatedProducts } from '../data/products.ts';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import { getProductBySlug, getRelatedProducts } from '../data/products';
+import Header from './Header';
+import Footer from './Footer';
 
 const ProductPage = () => {
   const { slug } = useParams<{ slug: string }>();
