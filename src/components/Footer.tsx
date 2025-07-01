@@ -50,12 +50,12 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-6">Industries</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Mining & Resources</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Construction</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Field Services</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Defence & Security</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Manufacturing</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Utilities & Energy</a></li>
+              <li><Link to="/industries/mining" className="text-slate-400 hover:text-[#F4B426] transition-colors">Mining & Resources</Link></li>
+              <li><Link to="/industries/construction" className="text-slate-400 hover:text-[#F4B426] transition-colors">Construction</Link></li>
+              <li><Link to="/industries/field-services" className="text-slate-400 hover:text-[#F4B426] transition-colors">Field Services</Link></li>
+              <li><Link to="/industries/defence" className="text-slate-400 hover:text-[#F4B426] transition-colors">Defence & Security</Link></li>
+              <li><Link to="/industries/manufacturing" className="text-slate-400 hover:text-[#F4B426] transition-colors">Manufacturing</Link></li>
+              <li><Link to="/industries/utilities" className="text-slate-400 hover:text-[#F4B426] transition-colors">Utilities & Energy</Link></li>
             </ul>
           </div>
 
@@ -63,12 +63,25 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-6">Support</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Technical Support</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Warranty Service</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Software Downloads</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Training</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Contact Us</a></li>
+              <li><Link to="/support" className="text-slate-400 hover:text-[#F4B426] transition-colors">Technical Support</Link></li>
+              <li><Link to="/support" className="text-slate-400 hover:text-[#F4B426] transition-colors">Warranty Service</Link></li>
+              <li><Link to="/downloads" className="text-slate-400 hover:text-[#F4B426] transition-colors">Documentation</Link></li>
+              <li><Link to="/downloads" className="text-slate-400 hover:text-[#F4B426] transition-colors">Software Downloads</Link></li>
+              <li><Link to="/support" className="text-slate-400 hover:text-[#F4B426] transition-colors">Training</Link></li>
+              <li><Link to="/support" className="text-slate-400 hover:text-[#F4B426] transition-colors">Contact Us</Link></li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="font-semibold text-lg mb-6">Resources</h3>
+            <ul className="space-y-3">
+              <li><Link to="/blog" className="text-slate-400 hover:text-[#F4B426] transition-colors">Blog & Insights</Link></li>
+              <li><Link to="/case-studies" className="text-slate-400 hover:text-[#F4B426] transition-colors">Case Studies</Link></li>
+              <li><Link to="/downloads" className="text-slate-400 hover:text-[#F4B426] transition-colors">Downloads</Link></li>
+              <li><Link to="/about" className="text-slate-400 hover:text-[#F4B426] transition-colors">About Us</Link></li>
+              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">News & Events</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-[#F4B426] transition-colors">Partners</a></li>
             </ul>
           </div>
         </div>

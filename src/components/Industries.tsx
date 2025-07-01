@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Pickaxe, HardHat, Truck, Shield, Factory, Zap } from 'lucide-react';
 
 const Industries = () => {
@@ -6,36 +7,42 @@ const Industries = () => {
     {
       icon: Pickaxe,
       title: 'Mining & Resources',
+      slug: 'mining',
       description: 'Certified for extreme heat, dust, and vibration in mining operations worldwide.',
       image: 'https://images.pexels.com/photos/6595788/pexels-photo-6595788.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
       icon: HardHat,
       title: 'Construction',
+      slug: 'construction',
       description: 'Built to withstand drops, weather, and job site conditions while maintaining connectivity.',
       image: 'https://images.pexels.com/photos/176342/pexels-photo-176342.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
       icon: Truck,
       title: 'Field Services',
+      slug: 'field-services',
       description: 'Reliable mobile computing for technicians working in remote locations worldwide.',
       image: 'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
       icon: Shield,
       title: 'Defence & Security',
+      slug: 'defence',
       description: 'Mission-critical rugged devices meeting military standards and security requirements.',
       image: 'https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
       icon: Factory,
       title: 'Manufacturing',
+      slug: 'manufacturing',
       description: 'Industrial-grade devices for factory floors, warehouses, and manufacturing environments.',
       image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
       icon: Zap,
       title: 'Utilities & Energy',
+      slug: 'utilities',
       description: 'Reliable computing for power generation, distribution, and renewable energy projects.',
       image: 'https://images.pexels.com/photos/2898199/pexels-photo-2898199.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     }
@@ -79,12 +86,15 @@ const Industries = () => {
                   <p className="text-slate-600 leading-relaxed">
                     {industry.description}
                   </p>
-                  <button className="mt-4 text-[#F4B426] hover:text-[#e6a625] font-medium inline-flex items-center transition-colors">
+                  <Link 
+                    to={`/industries/${industry.slug}`}
+                    className="mt-4 text-[#F4B426] hover:text-[#e6a625] font-medium inline-flex items-center transition-colors"
+                  >
                     Learn More
                     <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             );

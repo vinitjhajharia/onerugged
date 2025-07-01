@@ -31,12 +31,12 @@ const Header = () => {
               </button>
               <div className="absolute top-full left-0 mt-1 w-64 bg-white shadow-xl rounded-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <div className="p-4 space-y-2">
-                  <a href="#mining" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Mining & Resources</a>
-                  <a href="#construction" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Construction</a>
-                  <a href="#field-services" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Field Services</a>
-                  <a href="#defence" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Defence & Security</a>
-                  <a href="#manufacturing" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Manufacturing</a>
-                  <a href="#utilities" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Utilities & Energy</a>
+                  <Link to="/industries/mining" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Mining & Resources</Link>
+                  <Link to="/industries/construction" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Construction</Link>
+                  <Link to="/industries/field-services" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Field Services</Link>
+                  <Link to="/industries/defence" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Defence & Security</Link>
+                  <Link to="/industries/manufacturing" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Manufacturing</Link>
+                  <Link to="/industries/utilities" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Utilities & Energy</Link>
                 </div>
               </div>
             </div>
@@ -57,10 +57,25 @@ const Header = () => {
               </div>
             </div>
             
-            <a href="#solutions" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors">Solutions</a>
-            <a href="#support" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors">Support</a>
-            <a href="#about" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors">About</a>
-            <a href="#resources" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors">Resources</a>
+            <Link to="/solutions" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors">Solutions</Link>
+            <Link to="/support" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors">Support</Link>
+            <Link to="/about" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors">About</Link>
+            
+            <div className="relative group">
+              <button className="flex items-center text-slate-700 hover:text-[#F4B426] font-medium transition-colors">
+                Resources
+                <ChevronDown className="w-4 h-4 ml-1" />
+              </button>
+              <div className="absolute top-full left-0 mt-1 w-56 bg-white shadow-xl rounded-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div className="p-4 space-y-2">
+                  <Link to="/blog" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Blog & Insights</Link>
+                  <Link to="/downloads" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Downloads</Link>
+                  <Link to="/case-studies" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Case Studies</Link>
+                  <a href="#certifications" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Certifications</a>
+                  <a href="#documentation" className="block text-slate-600 hover:text-[#F4B426] py-2 px-3 rounded hover:bg-slate-50">Documentation</a>
+                </div>
+              </div>
+            </div>
             
             <div className="flex items-center space-x-4 ml-6 pl-6 border-l border-slate-200">
               <a href="tel:+61-1800-RUGGED" className="flex items-center text-slate-600 hover:text-[#F4B426] transition-colors">
@@ -115,12 +130,12 @@ const Header = () => {
               </button>
               {isIndustriesOpen && (
                 <div className="pl-4 space-y-3 bg-slate-50 rounded-lg p-4 ml-4">
-                  <a href="#mining" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Mining & Resources</a>
-                  <a href="#construction" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Construction</a>
-                  <a href="#field-services" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Field Services</a>
-                  <a href="#defence" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Defence & Security</a>
-                  <a href="#manufacturing" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Manufacturing</a>
-                  <a href="#utilities" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Utilities & Energy</a>
+                  <Link to="/industries/mining" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Mining & Resources</Link>
+                  <Link to="/industries/construction" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Construction</Link>
+                  <Link to="/industries/field-services" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Field Services</Link>
+                  <Link to="/industries/defence" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Defence & Security</Link>
+                  <Link to="/industries/manufacturing" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Manufacturing</Link>
+                  <Link to="/industries/utilities" className="block text-slate-600 hover:text-[#F4B426] py-2 transition-colors">Utilities & Energy</Link>
                 </div>
               )}
               
@@ -141,10 +156,12 @@ const Header = () => {
                 </div>
               )}
               
-              <a href="#solutions" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors py-3 block">Solutions</a>
-              <a href="#support" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors py-3 block">Support</a>
-              <a href="#about" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors py-3 block">About</a>
-              <a href="#resources" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors py-3 block">Resources</a>
+              <Link to="/solutions" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors py-3 block">Solutions</Link>
+              <Link to="/support" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors py-3 block">Support</Link>
+              <Link to="/about" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors py-3 block">About</Link>
+              <Link to="/blog" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors py-3 block">Blog</Link>
+              <Link to="/downloads" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors py-3 block">Downloads</Link>
+              <Link to="/case-studies" className="text-slate-700 hover:text-[#F4B426] font-medium transition-colors py-3 block">Case Studies</Link>
             </div>
             
             <div className="border-t border-slate-200 pt-6 mt-auto">
